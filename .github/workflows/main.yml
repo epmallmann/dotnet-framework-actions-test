@@ -22,8 +22,8 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.0
 
-    # - name: Add nuget to PATH
-    #   uses: nuget/setup-nuget@v1
+    - name: Add nuget to PATH
+      uses: nuget/setup-nuget@v1
 
     # - name: Nuget Restore
     #   working-directory: ConsoleAppForTest
