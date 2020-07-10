@@ -13,5 +13,11 @@ namespace ConsoleAppForTest.Tests
 
             Assert.AreNotEqual(3, MyMath.Sum(1, 1));
         }
+
+        [TestMethod]
+        public void TestSumFail()
+        {
+            Assert.AreEqual(2, MyMath.Sum(1, 2));
+        }
     }
 }
