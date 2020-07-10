@@ -25,10 +25,6 @@ jobs:
     - name: Add nuget to PATH
       uses: nuget/setup-nuget@v1
 
-    - name: Nuget Restore
-      working-directory: ConsoleAppForTest
-      run: nuget restore ConsoleAppForTest.sln 
-
     - name: Build
       working-directory: ConsoleAppForTest
       run: msbuild ConsoleAppForTest.sln
