@@ -17,13 +17,17 @@ jobs:
 
     steps:
     - name: Checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.0
 
     - name: Add nuget to PATH
       uses: nuget/setup-nuget@v1
+
+    - name: Nuget Restore
+      working-directory: ConsoleAppForTest
+      run: nuget restore ConsoleAppForTest.sln 
 
     - name: Build
       working-directory: ConsoleAppForTest
