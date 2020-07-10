@@ -25,6 +25,9 @@ jobs:
     - name: Add nuget to PATH
       uses: nuget/setup-nuget@v1
 
+    - name: Setup VSTest Path
+      uses: darenm/Setup-VSTest@v1
+
     - name: Nuget Restore
       working-directory: ConsoleAppForTest
       run: nuget restore ConsoleAppForTest.sln
@@ -32,3 +35,12 @@ jobs:
     - name: Build
       working-directory: ConsoleAppForTest
       run: msbuild ConsoleAppForTest.sln
+
+    - name: Test
+      working-directory: ConsoleAppForTest.Tests\bin\debug\
+      run: vstest.console.exe ConsoleAppForTest.Tests.dll
+
+    # - name: Test
+    #   working-directory: ConsoleAppForTest
+    #   run: '& "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe"'
+
